@@ -1,5 +1,7 @@
 # keywordio_frontend_test
 
+## (Didn't able to finish the frontend)
+
 Start Server: python manage.py runserver localhost:3000
 
 ### Signup
