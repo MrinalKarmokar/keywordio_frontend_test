@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends '../base.html' %}
+
+{% block title %}Signup{% endblock title %}
+
+{% block body %}
+
+<div class="container text-center">
+    <h1 class="h3 my-3 fw-normal">Library Management System</h1>
+    <h1 class="h3 my-3 fw-normal">Add books</h1>
+    <div class="row">
+        <div class="col-md-5 mx-auto my-5">
+            <form method="POST" name="add_books">
+                {% csrf_token %}
+                <div class="form-group my-3">
+                    <div class="row my-2">
+                        <div class="col">
+                            <div class="form-floating my-2">
+                                <input type="text" class="form-control" id="title" name="title" placeholder="title" />
+                                <label for="floatingInput">Title</label>
+                            </div>
+                            <div class="form-floating my-2">
+                                <input type="text" class="form-control" id="author" name="author" placeholder="author" />
+                                <label for="floatingInput">Author</label>
+                            </div>
+                            <div class="form-floating my-2">
+                                <input type="text" class="form-control" id="num_pages" name="num_pages" placeholder="No. of Pages" />
+                                <label for="floatingInput">No. of Pages</label>
+                            </div>
+                            <div class="form-floating my-2">
+                                <input type="text" class="form-control" id="publication" name="publication" placeholder="publication" />
+                                <label for="floatingInput">Publication</label>
+                            </div>
+                            <div class="form-floating my-2">
+                                <input type="text" class="form-control" id="publisher" name="publisher" placeholder="publisher" />
+                                <label for="floatingInput">Publisher</label>
+                            </div>
+
+                            <button class="w-100 btn btn-lg btn-primary" type="submit" name="submitbtn">
+                                Add book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="col-md-12 my-3">
+                <div class="form-group">
+                    <p class="text-center">
+                        <a href="{% url 'login' %}" id="signin">Already have an account?</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

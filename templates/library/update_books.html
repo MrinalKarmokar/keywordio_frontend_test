@@ -1,0 +1,37 @@
+{% extends '../base.html' %}
+
+{% block title %}All books{% endblock title %}
+
+{% block body %}
+
+{% include '../navbar.html' %}
+
+<div class="container my-4">
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">No. of Pages</th>
+            <th scope="col">Publication</th>
+            <th scope="col">Publisher</th>
+        </tr>
+        </thead>
+    {% for data in response %}
+    
+        <tbody>
+        <tr>
+            <th scope="row">{{data.id}}</th>
+            <td>{{data.title}}</td>
+            <td>{{data.author}}</td>
+            <td>{{data.num_pages}}</td>
+            <td>{{data.publication}}</td>
+            <td>{{data.publisher}}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock body %}

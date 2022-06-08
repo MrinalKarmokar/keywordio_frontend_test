@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends '../base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+
+<div class="container text-center">
+    <h1 class="h3 my-3 fw-normal">Library Management System</h1>
+    <h1 class="h3 my-3 fw-normal">Login</h1>
+    <div class="row">
+        <div class="col-md-5 mx-auto my-5">
+            <form method="POST" name="login">
+                {% csrf_token %}
+                <div class="form-group my-3">
+                    <div class="row my-2">
+                        <div class="col">
+                            <div class="form-floating my-2">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+                                <label for="floatingInput">Email</label>
+                            </div>
+                            <div class="form-floating my-2">
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Password" />
+                                <label for="floatingPassword">Password</label>
+                            </div>
+
+                            <button class="w-100 btn btn-lg btn-primary" type="submit" name="submitbtn">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="col-md-12 my-3">
+                <div class="form-group">
+                    <p class="text-center">
+                        <a href="{% url 'signup' %}" id="signin">Don't have an account?</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
